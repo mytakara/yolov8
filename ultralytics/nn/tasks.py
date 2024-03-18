@@ -134,7 +134,7 @@ class BaseModel(nn.Module):
                 embeddings.append(nn.functional.adaptive_avg_pool2d(x, (1, 1)).squeeze(-1).squeeze(-1))  # flatten
                 if m.i == max(embed):
                     return torch.unbind(torch.cat(embeddings, 1), dim=0)
-        print("x shape: ", x.shape)
+            print("x shape: ", x.shape)
         return x
 
     def _predict_augment(self, x):
